@@ -24,18 +24,14 @@
 	Float64 _freq;
 	
 	Float64 _table[kAudioDataByteSize];
-	
-	SInt8	_voiceReg;
 }
 
 - (void)on;
 - (void)off;
+
 - (Float64)getEnvelope;
 
-- (void)setAmp:(Float64)amplitude;
-
 @property (nonatomic)Float64 freq;
-@property SInt8 voiceReg;
 
 + (Float64)noteNumToFreq:(UInt8)note_num;
 

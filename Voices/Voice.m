@@ -10,12 +10,13 @@
 #import "AQPlayer.h"
 
 @implementation Voice
+@synthesize freq = _freq;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        _maxNoteAmp = MAX_AMP/kNumberVoices;
+        _maxNoteAmp = MAX_AMP / kNumberVoices;
     }
     return self;
 }
@@ -42,18 +43,6 @@
 	return _amplitude;
 }
 
-- (void)setAmp:(Float64)amplitude
-{
-    if (_maxNoteAmp != amplitude) {
-        _maxNoteAmp = amplitude;
-        
-       // NSLog(@"mMaxNoteAmp: %f", mMaxNoteAmp);
-    }
-}
-
-@synthesize freq = _freq;
-@synthesize voiceReg = _voiceReg;
-
 + (Float64) noteNumToFreq:(UInt8)noteNum {
 	return pow(2., (Float64)(noteNum - 69) / 12.) * 440.;
 }
@@ -65,10 +54,10 @@
 
 -(void)getSamplesForFreq:(Float64*)buffer:(UInt32)num_samples {
 	
-	for (UInt32 i = 0; i < num_samples; i++) {
+	for (UInt32 i = 0; i < num_samples; ++i) {
 		buffer[i] += _maxNoteAmp * [self getWaveTable:_theta] * [self getEnvelope];
 		_theta += _deltaTheta;
-	}
+    }
 }
 
 - (Float64)getWaveTable:(Float64)index {

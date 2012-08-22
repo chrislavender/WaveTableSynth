@@ -36,6 +36,7 @@
 - (void)setSoundType:(SoundType)newSoundType
 {
     if (soundType != newSoundType) {
+        soundType = newSoundType;
         changingSound = YES;
         
         switch (soundType) {

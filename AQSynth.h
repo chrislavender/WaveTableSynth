@@ -25,8 +25,14 @@
 
 @property UInt16 volume;
 
+#pragma mark - monophonic methods
 - (void)midiNoteOn:(int)noteNum;
 - (void)changeMidiNoteToNoteNum:(int)noteNum;
 - (void)midiNoteOff:(int)noteNum;
+
+#pragma mark - polyphonic methods
+- (void)midiNoteOn:(int)noteNum atVoiceIndex:(int)voiceIndex;
+- (void)changeMidiNoteToNoteNum:(int)noteNum atVoiceIndex:(int)voiceIndex;
+- (void)midiNoteOff:(int)noteNum atVoiceIndex:(int)voiceIndex;
 
 @end

@@ -28,7 +28,7 @@
         _release = kSR * 0.01;
         _sustain = 0.9;
         
-        self.voiceReg = 12;
+        //self.voiceReg = 12;
 
     }
     return self;

@@ -29,8 +29,6 @@
         _attack = kSR * 0.009;
         _release = kSR * 0.01;
         _sustain = 0.6;
-        
-        self.voiceReg = 0;
 
     }
     return self;

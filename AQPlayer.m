@@ -12,6 +12,8 @@
 
 @synthesize isRunning;
 
+void AQBufferCallback(void *, AudioQueueRef, AudioQueueBufferRef);
+
 void AQBufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inAQBuffer) {	
 	
 	AQPlayer *aqp = (__bridge AQPlayer *)inUserData;
@@ -90,7 +92,24 @@ void AQBufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef 
 	return result;
 }
 
+
+- (OSStatus)volumeLevel:(float)level
+{
+    OSStatus result = noErr;
+
+    result = AudioQueueSetParameter(mQueue, kAudioQueueParam_Volume, level);
+    
+    if (result != noErr) {
+        NSLog(@"AudioQueueSetParameter returned %ld when setting the volume.", result);
+    }
+    
+    return result;
+}
+
 - (void)fillAudioBuffer:(Float64*)buffer:(UInt32)numFrames {
+    
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
 @end
