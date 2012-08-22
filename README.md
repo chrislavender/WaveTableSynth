@@ -16,7 +16,7 @@ Currently there a couple of ways to play notes. The easiest would be to use:
 True polyphony is not yet fully supported but there groundwork is there. Of course folks
 are welcome to submit pull requests.
 
-Global volume can be controlled by the AQSynth's 
+Global volume can be controlled by the AQSynth's (AQSound's super)
 
     @property UInt16 volume;
 
