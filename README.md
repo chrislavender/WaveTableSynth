@@ -13,8 +13,7 @@ Currently there a couple of ways to play notes. The easiest would be to use:
     - (void)changeMidiNoteToNoteNum:(int)noteNum atVoiceIndex:(int)voiceIndex;
     - (void)midiNoteOff:(int)noteNum atVoiceIndex:(int)voiceIndex;
 
-True polyphony is not yet fully supported but there groundwork is there. Of course folks
-are welcome to submit pull requests.
+True polyphony is not yet fully supported but the groundwork is there.
 
 Global volume can be controlled by the AQSynth's (AQSound's super)
 
