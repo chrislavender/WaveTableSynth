@@ -31,3 +31,6 @@ Change this to 1 and edit the AQSynth's volume property to allow for
 some interesting (in my opinion) digital distortion effects.
 
 Have fun!
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chrislavender/wavetablesynth/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
