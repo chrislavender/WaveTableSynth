@@ -1,3 +1,5 @@
+NOTE: This is pretty crusty at this point. A new project called Thumbafon is in the works with a refresh of this code. I'll update here too once it's done.
+
 WaveTableSynth
 ==============
 
@@ -6,6 +8,7 @@ Light weight polyphonic additive wave table synthesizer that uses Audio Queues
 In your view controller just create an AQSound object
 
         _aqPlayer = [[AQSound alloc]init];
+        [_aqPlayer start];
 
 Currently there a couple of ways to play notes. The easiest would be to use:
 
